@@ -69,7 +69,12 @@ Owner action needed before deployment can proceed safely:
 ## Status
 
 - G1 (isolation, repo/target IDs): **partially complete**. Repository-level isolation is
-  verified; Vercel project-level isolation is blocked on owner input (see above). Proceeding
-  with repository work (Tasks 2–6) per the plan's dependency graph, which does not require a
-  live Vercel project. Stopping before any deployment step (Task 7) until the above is
-  resolved.
+  verified; Vercel project-level isolation is blocked on owner input (see above).
+- G2 (routes/navigation), G3 (landing/content/form truth): **complete**. Tasks 2–6 implemented,
+  tested, and committed to `experiment/business-first-landing`.
+- G4 (protected Preview + comparative evidence): **partially complete**. All QA that does not
+  require a hosted Preview was completed against a local production server — see
+  `docs/experiment/QA_REPORT.md`. No Vercel project was created and no deployment was attempted,
+  since this session has no Vercel CLI, token, or authenticated session available. Re-verified
+  at the end of this session: `Noe-09/BM-BMP-website` `main` and this experiment repo's own
+  `main` both still resolve to `fd66811f7fb96c0a733ec8b1915d305af6db50ae`.
