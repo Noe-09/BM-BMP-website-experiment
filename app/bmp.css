@@ -752,6 +752,15 @@
   font-weight: 680;
 }
 
+.bmp-contact-form__notice {
+  grid-column: 1 / -1;
+  padding: 0.85rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(16, 16, 15, 0.3);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
 .bmp-contact-form__field {
   position: relative;
   display: grid;

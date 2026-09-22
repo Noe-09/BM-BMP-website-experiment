@@ -20,6 +20,7 @@ import {
   type InquiryFieldErrors,
   type InquiryFieldName,
 } from "@/lib/contact/inquiry";
+import { EXPERIMENT_INQUIRY_ENABLED } from "@/lib/contact/experiment-policy";
 
 const FIELD_AUTOCOMPLETE: Record<InquiryFieldName, string> = {
   name: "name",
@@ -107,6 +108,12 @@ export function ContactForm() {
         <p className="bmp-contact-form__legend">
           Fields marked <strong>Required</strong> help us review the problem. The rest are optional.
         </p>
+        {!EXPERIMENT_INQUIRY_ENABLED ? (
+          <p className="bmp-contact-form__notice" role="status">
+            Preview: form submissions are unavailable. Please use one of the direct contact
+            options instead.
+          </p>
+        ) : null}
         {CONTACT.fields.map((field, index) => {
           const id = `contact-${field.name.value}`;
           const name = field.name.value as InquiryFieldName;
@@ -163,8 +170,12 @@ export function ContactForm() {
           />
         </div>
 
-        <button type="submit" disabled={pending}>
-          {pending ? "Sending…" : CONTACT.primaryAction.label.value}
+        <button type="submit" disabled={pending || !EXPERIMENT_INQUIRY_ENABLED}>
+          {!EXPERIMENT_INQUIRY_ENABLED
+            ? "Preview: submissions unavailable"
+            : pending
+              ? "Sending…"
+              : CONTACT.primaryAction.label.value}
         </button>
         <p
           ref={statusRef}
