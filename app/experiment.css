@@ -1,0 +1,195 @@
+.bmp-experiment {
+  background: #ebe7dc;
+  color: #10100f;
+}
+
+.bmp-experiment a:focus-visible,
+.bmp-experiment button:focus-visible {
+  outline: 2px solid #10100f;
+  outline-offset: 3px;
+}
+
+.bmp-experiment-hero {
+  padding-block: clamp(2.5rem, 8vh, 5rem);
+}
+
+.bmp-experiment-hero__eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.bmp-experiment-hero h1 {
+  max-width: 22ch;
+  margin-block: clamp(1rem, 3vh, 2rem);
+  font-size: clamp(2.2rem, 6vw, 4.4rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  font-weight: 680;
+}
+
+.bmp-experiment-hero__intro {
+  max-width: 56ch;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+}
+
+.bmp-experiment-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.bmp-experiment .bmp-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 2.75rem;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid #10100f;
+  border-radius: 0;
+  color: #10100f;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.bmp-experiment .bmp-button--solid {
+  background: #10100f;
+  color: #f4f1e9;
+}
+
+.bmp-experiment-section__header {
+  max-width: 60ch;
+  margin-bottom: 2rem;
+}
+
+.bmp-experiment-section__header h2 {
+  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+  letter-spacing: -0.01em;
+}
+
+.bmp-experiment-work,
+.bmp-experiment-services,
+.bmp-experiment-approach,
+.bmp-experiment-contact {
+  padding-block: clamp(2.5rem, 6vh, 4.5rem);
+  border-top: 1px solid rgba(16, 16, 15, 0.12);
+}
+
+.bmp-experiment-work__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.bmp-experiment-work__card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.bmp-experiment-work__media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.bmp-experiment-work__media img {
+  object-fit: cover;
+}
+
+.bmp-experiment-work__status {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.bmp-experiment-work__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.bmp-experiment-work__all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 2rem;
+  min-height: 2.75rem;
+}
+
+.bmp-experiment-services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.bmp-experiment-services__card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(16, 16, 15, 0.12);
+}
+
+.bmp-experiment-services__headline {
+  font-weight: 600;
+}
+
+.bmp-experiment-approach__list {
+  display: grid;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.bmp-experiment-approach__list li {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+.bmp-experiment-art {
+  padding-block: clamp(3rem, 8vh, 6rem);
+  background: #10100f;
+  color: #f4f1e9;
+}
+
+.bmp-experiment-art__inner {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 60ch;
+}
+
+.bmp-experiment-art .bmp-button {
+  border-color: #f4f1e9;
+  color: #f4f1e9;
+}
+
+.bmp-experiment-art .bmp-button--solid {
+  background: #f4f1e9;
+  color: #10100f;
+}
+
+.bmp-experiment-contact__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .bmp-experiment-work__grid,
+  .bmp-experiment-services__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bmp-experiment * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
