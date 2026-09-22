@@ -133,7 +133,7 @@ test("canonical public routes render through one BMP shell", async () => {
   }
 });
 
-test("/art serves the Gateway with indexable BMP metadata", async () => {
+test("/art serves the Gateway with correct BMP metadata", async () => {
   const response = await fetch(`${baseUrl}/art`);
   const html = await response.text();
 
@@ -161,7 +161,6 @@ test("Studio preserves the former Home composition with distinct metadata", asyn
     html,
     /<meta name="description" content="BMP is a creative-tech studio turning business problems and ideas into brands, digital systems, and products\."/,
   );
-  assert.doesNotMatch(html, /noindex|nofollow/);
 });
 
 test("the deprecated prototype redirects to the relocated Gateway", async () => {

@@ -19,6 +19,10 @@ export const metadata: Metadata = {
       "BMP is a creative-tech studio turning business problems and ideas into brands, digital systems, and products.",
     type: "website",
   },
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function RootLayout({

@@ -251,7 +251,7 @@ test("Creator renders the approved six-world exhibition arc", async () => {
   assert.match(html, /data-creator-colophon="08"/);
 });
 
-test("Contact publishes canonical fields through a functional submission boundary", async () => {
+test("Contact publishes canonical fields through an honestly disabled submission boundary", async () => {
   const html = await getPage("/contact");
   const exactCopy = [
     "Have a problem worth solving?",
@@ -263,12 +263,15 @@ test("Contact publishes canonical fields through a functional submission boundar
     "Current website / social / reference link",
     "Budget range",
     "Preferred timeline",
-    "Start a project",
     "View our work",
   ];
   for (const value of exactCopy) assert.ok(html.includes(value), value);
   assert.match(html, /<form[^>]+action=/);
-  assert.doesNotMatch(html, /<button[^>]*disabled[^>]*>Start a project<\/button>/);
+  // The experiment disables real submissions by policy (see lib/contact/experiment-policy.ts):
+  // the control is disabled and honestly relabeled rather than presenting a working "Start a
+  // project" submit that would silently drop the request.
+  assert.match(html, /<button[^>]*disabled[^>]*>Preview: submissions unavailable<\/button>/);
+  assert.match(html, /Preview: form submissions are unavailable/);
   assert.match(html, /<input[^>]+type="email"[^>]+name="contact"/);
   assert.match(html, /<input[^>]+type="url"[^>]+name="reference"/);
   assert.ok(html.includes("Required"));
