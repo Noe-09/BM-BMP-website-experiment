@@ -174,7 +174,7 @@ test("BM Visual renders the flagship experience inside the BMP architecture", as
 
   for (const destination of [
     'href="/"',
-    'href="/studio"',
+    'href="/art"',
     'href="/work"',
     'href="/bm-tech"',
     'href="/creator"',

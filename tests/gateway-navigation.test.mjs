@@ -200,3 +200,11 @@ test("navigation fallback compares the parsed destination pathname", () => {
     false,
   );
 });
+
+test("navigation fallback also resolves the relocated /art gateway pathname", () => {
+  const expected = getGatewayExpectedPathname("/art?from=split#entry", "https://bm.test/art");
+
+  assert.equal(expected, "/art");
+  assert.equal(shouldUseGatewayLocationFallback("/gateway-prototype", expected), true);
+  assert.equal(shouldUseGatewayLocationFallback("/art", expected), false);
+});

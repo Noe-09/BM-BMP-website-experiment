@@ -99,19 +99,19 @@ test("About, Creator, Contact, navigation, and Work expose only approved public 
       [NAVIGATION.gateway.label.value, NAVIGATION.gateway.href.value],
     ],
     [
-      ["BMP", "/studio"],
-      ["Switch World", "/"],
+      ["BMP", "/"],
+      ["Explore Art", "/art"],
     ],
   );
   assert.deepEqual(
     NAVIGATION.items.map(({ label, href }) => [label.value, href.value]),
     [
-      ["Switch World", "/"],
       ["Work", "/work"],
       ["BM Visual", "/bm-visual"],
       ["BM Tech", "/bm-tech"],
       ["BMP Creator", "/creator"],
       ["About Us", "/about"],
+      ["Explore Art", "/art"],
       ["Start a Project", "/contact"],
     ],
   );

@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
-import { GatewayPrototype } from "@/components/gateway/GatewayPrototype";
 import { BRAND } from "@/content/brand";
-import "./gateway.css";
 
 export const metadata: Metadata = {
   title: {
@@ -12,5 +11,12 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return <GatewayPrototype />;
+  return (
+    <main>
+      <h1>BMP Experiment</h1>
+      <Link href="/work">Work</Link>
+      <Link href="/contact">Contact</Link>
+      <Link href="/art">Explore Art</Link>
+    </main>
+  );
 }

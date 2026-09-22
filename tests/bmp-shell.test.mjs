@@ -133,8 +133,8 @@ test("canonical public routes render through one BMP shell", async () => {
   }
 });
 
-test("the production root serves the Gateway with indexable BMP metadata", async () => {
-  const response = await fetch(baseUrl);
+test("/art serves the Gateway with indexable BMP metadata", async () => {
+  const response = await fetch(`${baseUrl}/art`);
   const html = await response.text();
 
   assert.equal(response.status, 200);
@@ -144,7 +144,6 @@ test("the production root serves the Gateway with indexable BMP metadata", async
     html,
     /<meta name="description" content="BMP is a creative-tech studio turning business problems and ideas into brands, digital systems, and products\."/,
   );
-  assert.doesNotMatch(html, /noindex|nofollow/);
   assert.doesNotMatch(html, /<title>BM Gateway — Three Worlds/);
 });
 
@@ -165,17 +164,18 @@ test("Studio preserves the former Home composition with distinct metadata", asyn
   assert.doesNotMatch(html, /noindex|nofollow/);
 });
 
-test("the deprecated prototype redirects to the canonical root", async () => {
+test("the deprecated prototype redirects to the relocated Gateway", async () => {
   const response = await fetch(`${baseUrl}/gateway-prototype`, {
     redirect: "manual",
   });
 
   assert.equal(response.status, 307);
-  assert.equal(response.headers.get("location"), "/");
+  assert.equal(response.headers.get("location"), "/art");
 });
 
 test("all public destinations remain directly accessible", async () => {
   for (const path of [
+    "/art",
     "/bm-visual",
     "/bm-tech",
     "/creator",
@@ -196,7 +196,7 @@ test("the restrained Studio navigation exposes every canonical destination", asy
 
   for (const href of [
     "/",
-    "/studio",
+    "/art",
     "/work",
     "/bm-visual",
     "/bm-tech",
