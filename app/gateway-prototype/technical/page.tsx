@@ -14,7 +14,7 @@ export default function TechnicalPrototypePage() {
         <p className="gateway-fallback__division-name">BMP TECHNICAL</p>
         <p className="gateway-fallback__division-type">Technology / AI Systems</p>
         <h1>PROTOTYPE DESTINATION</h1>
-        <Link href="/" className="gateway-fallback__action">
+        <Link href="/art" className="gateway-fallback__action">
           BACK TO GATEWAY ←
         </Link>
       </div>
