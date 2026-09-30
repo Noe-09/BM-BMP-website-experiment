@@ -100,13 +100,13 @@ test("About, Creator, Contact, navigation, and Work expose only approved public 
     ],
     [
       ["BMP", "/studio"],
-      ["Switch World", "/"],
+      ["Switch World", "/art"],
     ],
   );
   assert.deepEqual(
     NAVIGATION.items.map(({ label, href }) => [label.value, href.value]),
     [
-      ["Switch World", "/"],
+      ["Switch World", "/art"],
       ["Work", "/work"],
       ["BM Visual", "/bm-visual"],
       ["BM Tech", "/bm-tech"],

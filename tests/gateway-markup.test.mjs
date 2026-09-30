@@ -76,8 +76,8 @@ test("context cursor adds isolated gateway mode while retaining existing modes",
   assert.match(css, /\.context-cursor\[data-mode="view"\],\s*\.context-cursor\[data-mode="explore"\]\s*\{[^}]*width:\s*84px;/s);
 });
 
-test("the production root owns the Gateway and Studio owns the former Home", async () => {
-  const gateway = await read("../app/page.tsx");
+test("the art route owns the Gateway and Studio owns the former Home", async () => {
+  const gateway = await read("../app/art/page.tsx");
   const studio = await read("../app/studio/page.tsx");
   const deprecated = await read("../app/gateway-prototype/page.tsx");
 
@@ -85,7 +85,7 @@ test("the production root owns the Gateway and Studio owns the former Home", asy
   assert.match(gateway, /GatewayPrototype/);
   assert.match(studio, /BmpHero/);
   assert.doesNotMatch(studio, /GatewayPrototype|gateway-prototype/i);
-  assert.match(deprecated, /redirect\("\/"\)/);
+  assert.match(deprecated, /redirect\("\/art"\)/);
 });
 
 test("technical prototype route loads the gateway fallback stylesheet directly", async () => {
@@ -138,7 +138,7 @@ test("orchestrator owns session resolution, loader modes, fallback timing, and s
 });
 
 test("gateway route renders the shared client orchestrator from a server component", async () => {
-  const source = await read("../app/page.tsx");
+  const source = await read("../app/art/page.tsx");
 
   assert.match(source, /GatewayPrototype/);
   assert.match(source, /BRAND\.positioning\.value/);

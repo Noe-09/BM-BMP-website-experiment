@@ -133,13 +133,13 @@ test("canonical public routes render through one BMP shell", async () => {
   }
 });
 
-test("the production root serves the Gateway with indexable BMP metadata", async () => {
-  const response = await fetch(baseUrl);
+test("the art route serves the Gateway with page-specific metadata", async () => {
+  const response = await fetch(`${baseUrl}/art`);
   const html = await response.text();
 
   assert.equal(response.status, 200);
   assert.match(html, /class="gateway-page gateway-prototype"/);
-  assert.match(html, /<title>BMP — Creative × Technology × Products<\/title>/);
+  assert.match(html, /<title>BMP Art — Explore the Original World<\/title>/);
   assert.match(
     html,
     /<meta name="description" content="BMP is a creative-tech studio turning business problems and ideas into brands, digital systems, and products\."/,
@@ -165,13 +165,13 @@ test("Studio preserves the former Home composition with distinct metadata", asyn
   assert.doesNotMatch(html, /noindex|nofollow/);
 });
 
-test("the deprecated prototype redirects to the canonical root", async () => {
+test("the deprecated prototype redirects to art", async () => {
   const response = await fetch(`${baseUrl}/gateway-prototype`, {
     redirect: "manual",
   });
 
   assert.equal(response.status, 307);
-  assert.equal(response.headers.get("location"), "/");
+  assert.equal(response.headers.get("location"), "/art");
 });
 
 test("all public destinations remain directly accessible", async () => {
@@ -195,7 +195,7 @@ test("the restrained Studio navigation exposes every canonical destination", asy
   const html = await response.text();
 
   for (const href of [
-    "/",
+    "/art",
     "/studio",
     "/work",
     "/bm-visual",
@@ -224,4 +224,23 @@ test("the responsive Studio shell uses an intentional compact menu without hidin
   assert.match(mobileRules, /\.bmp-header__nav\s*\{[\s\S]*?display:\s*none/);
   assert.match(mobileRules, /\.compact-nav\s*\{[\s\S]*?display:\s*block/);
   assert.doesNotMatch(css, /\.bmp-header__nav a:nth-child/);
+});
+
+
+test("fast entry renders useful content and native links without a Gateway", async () => {
+  const response = await fetch(baseUrl);
+  const html = await response.text();
+  assert.equal(response.status, 200);
+  assert.equal(html.match(/<h1\b/g)?.length, 1);
+  assert.match(html, /We help businesses/);
+  assert.match(html, /VIEW WORK/);
+  assert.match(html, /START A PROJECT/);
+  assert.match(html, /Selected work/);
+  assert.match(html, /What we do/);
+  assert.equal(html.match(/class="fe-status">Concept/g)?.length, 2);
+  for (const href of ["/work", "/contact", "/about", "/art", "#services", "/work/fabriclism", "/work/haven"]) {
+    assert.ok(html.includes(`href="${href}"`), href);
+  }
+  assert.doesNotMatch(html, /<canvas|gateway-prototype|Gateway loading status/);
+  assert.match(html, /<meta name="description" content="We help businesses/);
 });

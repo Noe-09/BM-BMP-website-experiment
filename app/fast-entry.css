@@ -70,4 +70,4 @@
   .fe-art-note { display: block; }
   .fe-contact { padding: 60px 0; }
 }
-@media (prefers-reduced-motion: reduce) { .fast-entry a { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .fast-entry a { transition: none !important; } }

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages -- Native document navigation keeps optional world bundles off the fast entry page. */
 import type { Metadata } from "next";
 import Image from "next/image";
 import { projectRegistry } from "@/lib/projects/selected-work";
@@ -26,7 +27,7 @@ export default function Home() {
     <div className="fast-entry">
       <a className="fe-skip" href="#main">Skip to content</a>
       <header className="fe-header">
-        <a className="fe-brand" href="/" aria-label="BMP home">BMP<span aria-hidden="true">®</span></a>
+        <a className="fe-brand" href="/" aria-label="BMP home">BMP</a>
         <nav aria-label="Primary navigation">
           <a href="/work">WORK</a>
           <a href="#services">SERVICES</a>
