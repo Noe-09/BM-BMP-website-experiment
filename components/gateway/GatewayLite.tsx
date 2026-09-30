@@ -54,9 +54,15 @@ export function GatewayLite() {
       if (event.type === "pointerover" && coarse.matches) return;
       const link = event.target instanceof Element ? event.target.closest<HTMLElement>("[data-world]") : null;
       const world = link?.dataset.world;
-      setPreview(world === "visuals" || world === "creator" || world === "technical" ? world : null);
+      const next = world === "visuals" || world === "creator" || world === "technical" ? world : null;
+      setPreview(next);
+      if (next) hero.dataset.activeWorld = next;
+      else delete hero.dataset.activeWorld;
     };
-    const clearPreview = () => setPreview(null);
+    const clearPreview = () => {
+      setPreview(null);
+      delete hero.dataset.activeWorld;
+    };
     hero.addEventListener("click", onClick);
     hero.addEventListener("pointerover", onPreview);
     hero.addEventListener("focusin", onPreview);

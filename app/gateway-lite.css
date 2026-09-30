@@ -78,3 +78,186 @@
   .gateway-lite a, .gl-canvas { transition: none !important; }
   .gl-signature { display: none !important; }
 }
+
+/* Editorial selector refinement: the scene remains the hero and the links read as type. */
+.gl-hero {
+  background: transparent;
+}
+.gl-header {
+  position: relative;
+  z-index: 2;
+  min-height: 64px;
+  border-bottom: 0;
+  background: transparent;
+}
+.gl-header nav a {
+  opacity: .78;
+}
+.gl-header nav a:hover,
+.gl-header nav a:focus-visible {
+  opacity: 1;
+  color: #e87b4d;
+  text-decoration: none;
+}
+.gl-intro {
+  position: relative;
+  z-index: 2;
+  max-width: 430px;
+  padding: 12px 0 0;
+  background: transparent;
+  opacity: .82;
+}
+.gl-intro h1 {
+  font-size: clamp(14px, 1.45vw, 20px);
+  line-height: 1.3;
+  letter-spacing: -.025em;
+}
+.gl-intro p {
+  max-width: 330px;
+  margin-top: 8px;
+  font-size: 11px;
+  line-height: 1.45;
+}
+.gl-space {
+  position: relative;
+  z-index: 1;
+}
+.gl-worlds {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+}
+.gl-worlds > p {
+  padding: 8px 0 10px;
+  border-bottom: 1px solid rgb(232 238 241 / 18%);
+  color: rgb(232 238 241 / 58%);
+}
+.gl-world-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(18px, 4vw, 72px);
+}
+.gl-world-grid a,
+.gl-world-grid a:first-child,
+.gl-world-grid a:last-child {
+  position: relative;
+  display: grid;
+  grid-template-columns: 24px 1fr 20px;
+  align-items: start;
+  gap: 12px;
+  min-height: 84px;
+  padding: 14px 0 12px;
+  border: 0;
+  border-bottom: 1px solid rgb(232 238 241 / 18%);
+  background: transparent;
+  color: rgb(232 238 241 / 62%);
+}
+.gl-world-grid a::after {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 36px;
+  height: 1px;
+  background: #e87b4d;
+  content: "";
+  opacity: 0;
+  transform: scaleX(.25);
+  transform-origin: left;
+  transition: opacity 180ms ease, transform 220ms ease;
+}
+.gl-world-grid a:hover,
+.gl-world-grid a:focus-visible,
+.gl-hero[data-active-world="visuals"] .gl-world-grid a[data-world="visuals"],
+.gl-hero[data-active-world="creator"] .gl-world-grid a[data-world="creator"],
+.gl-hero[data-active-world="technical"] .gl-world-grid a[data-world="technical"] {
+  color: var(--gl-ink);
+  background: transparent;
+}
+.gl-world-grid a:hover::after,
+.gl-world-grid a:focus-visible::after,
+.gl-hero[data-active-world="visuals"] .gl-world-grid a[data-world="visuals"]::after,
+.gl-hero[data-active-world="creator"] .gl-world-grid a[data-world="creator"]::after,
+.gl-hero[data-active-world="technical"] .gl-world-grid a[data-world="technical"]::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+.gl-world-grid a:focus-visible {
+  outline: 0;
+}
+.gl-world-grid a:focus-visible strong {
+  text-decoration: underline;
+  text-decoration-color: #e87b4d;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+}
+.gl-world-index {
+  padding-top: 3px;
+  color: rgb(232 238 241 / 48%);
+  font-size: 10px;
+}
+.gl-world-grid strong {
+  font-size: clamp(14px, 1.6vw, 22px);
+  font-weight: 450;
+  letter-spacing: -.015em;
+}
+.gl-world-description {
+  margin-top: 7px;
+  color: rgb(232 238 241 / 56%);
+  font-size: 11px;
+}
+.gl-arrow {
+  color: #e87b4d;
+  font-size: 17px;
+  opacity: .68;
+}
+.gl-content {
+  position: relative;
+  z-index: 3;
+}
+@media (max-width: 639px) {
+  .gl-hero {
+    min-height: 100svh;
+    grid-template-rows: auto auto minmax(100px, 1fr) auto;
+    padding: 0 20px 18px;
+  }
+  .gl-header {
+    min-height: 60px;
+  }
+  .gl-header nav {
+    gap: 10px;
+  }
+  .gl-header nav a {
+    font-size: 9px;
+  }
+  .gl-intro {
+    max-width: 300px;
+    padding-top: 10px;
+  }
+  .gl-intro h1 {
+    font-size: 14px;
+  }
+  .gl-intro p {
+    max-width: 290px;
+    font-size: 10px;
+  }
+  .gl-world-grid {
+    display: block;
+  }
+  .gl-world-grid a,
+  .gl-world-grid a:first-child,
+  .gl-world-grid a:last-child {
+    grid-template-columns: 24px 1fr 20px;
+    min-height: 64px;
+    padding: 11px 0;
+  }
+  .gl-world-grid strong {
+    font-size: 17px;
+  }
+  .gl-world-description {
+    margin-top: 4px;
+    font-size: 10px;
+  }
+  .gl-world-grid a::after {
+    left: 36px;
+  }
+}
