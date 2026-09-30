@@ -32,7 +32,7 @@ try {
     await page.evaluate(() => scrollTo(0, 0));
     if ([360, 390, 1440].includes(width)) await page.screenshot({ path: `${output}/home-${width}.png`, fullPage: true });
     results.viewports.push({ width, noOverflow: true, heroActionsAboveFold: true, servicesAnchor: true, noGatewayRequests: true });
-    if (width === 1440) results.network.home = requests;
+    if (width === 1440) results.network.home = [...requests];
     // Native links, back navigation and reload from the page itself.
     await page.getByRole('link', { name: 'VIEW WORK', exact: true }).click();
     await page.waitForURL(`${base}/work`);

@@ -1,0 +1,128 @@
+{
+  "viewports": [
+    {
+      "width": 360,
+      "noOverflow": true,
+      "heroActionsAboveFold": true,
+      "servicesAnchor": true,
+      "noGatewayRequests": true
+    },
+    {
+      "width": 390,
+      "noOverflow": true,
+      "heroActionsAboveFold": true,
+      "servicesAnchor": true,
+      "noGatewayRequests": true
+    },
+    {
+      "width": 768,
+      "noOverflow": true,
+      "heroActionsAboveFold": true,
+      "servicesAnchor": true,
+      "noGatewayRequests": true
+    },
+    {
+      "width": 1024,
+      "noOverflow": true,
+      "heroActionsAboveFold": true,
+      "servicesAnchor": true,
+      "noGatewayRequests": true
+    },
+    {
+      "width": 1440,
+      "noOverflow": true,
+      "heroActionsAboveFold": true,
+      "servicesAnchor": true,
+      "noGatewayRequests": true
+    }
+  ],
+  "routes": [
+    {
+      "route": "/work",
+      "status": 200
+    },
+    {
+      "route": "/contact",
+      "status": 200
+    },
+    {
+      "route": "/bm-visual",
+      "status": 200
+    },
+    {
+      "route": "/bm-tech",
+      "status": 200
+    },
+    {
+      "route": "/creator",
+      "status": 200
+    },
+    {
+      "route": "/about",
+      "status": 200
+    },
+    {
+      "route": "/work/fabriclism",
+      "status": 200
+    },
+    {
+      "route": "/work/haven",
+      "status": 200
+    }
+  ],
+  "errors": [],
+  "network": {
+    "home": [
+      "http://127.0.0.1:3100/",
+      "http://127.0.0.1:3100/_next/static/css/375fb1cc4e03921b.css",
+      "http://127.0.0.1:3100/_next/static/css/50d1c84d0c70428e.css",
+      "http://127.0.0.1:3100/_next/static/chunks/webpack-828ec0fef0157192.js",
+      "http://127.0.0.1:3100/_next/static/chunks/4bd1b696-92152b0f5947070d.js",
+      "http://127.0.0.1:3100/_next/static/chunks/794-735cf927e48def02.js",
+      "http://127.0.0.1:3100/_next/static/chunks/main-app-5581341034c4bcdd.js",
+      "http://127.0.0.1:3100/_next/static/chunks/app/layout-59412aa2071d01d0.js",
+      "http://127.0.0.1:3100/_next/static/chunks/437-dad72d7526ba8d47.js",
+      "http://127.0.0.1:3100/_next/static/chunks/app/page-d8adc066f80dc026.js",
+      "http://127.0.0.1:3100/_next/image?url=%2Fprojects%2Ffabriclism%2Fcampaign.webp&w=750&q=75",
+      "http://127.0.0.1:3100/_next/image?url=%2Fprojects%2Fhaven%2Fhero.webp&w=750&q=75",
+      "http://127.0.0.1:3100/favicon.ico?603d046c9a6fdfbb",
+      "http://127.0.0.1:3100/favicon.ico?603d046c9a6fdfbb"
+    ],
+    "art": [
+      "http://127.0.0.1:3100/art",
+      "http://127.0.0.1:3100/_next/static/css/375fb1cc4e03921b.css",
+      "http://127.0.0.1:3100/_next/static/css/882714e651af7cd8.css",
+      "http://127.0.0.1:3100/_next/static/chunks/webpack-828ec0fef0157192.js",
+      "http://127.0.0.1:3100/_next/static/chunks/4bd1b696-92152b0f5947070d.js",
+      "http://127.0.0.1:3100/_next/static/chunks/794-735cf927e48def02.js",
+      "http://127.0.0.1:3100/_next/static/chunks/main-app-5581341034c4bcdd.js",
+      "http://127.0.0.1:3100/_next/static/chunks/app/layout-59412aa2071d01d0.js",
+      "http://127.0.0.1:3100/_next/static/chunks/bd904a5c-bd45e9b9ae2e94d0.js",
+      "http://127.0.0.1:3100/_next/static/chunks/b536a0f1-f7dace469d34b160.js",
+      "http://127.0.0.1:3100/_next/static/chunks/500-b13bb91f5a6311b6.js",
+      "http://127.0.0.1:3100/_next/static/chunks/750-1d9492933e3996a6.js",
+      "http://127.0.0.1:3100/_next/static/chunks/945-6d9d49d0c0b48834.js",
+      "http://127.0.0.1:3100/_next/static/chunks/app/art/page-4e795cb1ba7b6596.js",
+      "http://127.0.0.1:3100/favicon.ico?603d046c9a6fdfbb",
+      "http://127.0.0.1:3100/bm-visual?_rsc=5omTvsd2uCW4k9h2",
+      "http://127.0.0.1:3100/bm-tech?_rsc=5omTvsd2uCW4k9h2",
+      "http://127.0.0.1:3100/creator?_rsc=5omTvsd2uCW4k9h2",
+      "http://127.0.0.1:3100/projects/fabriclism/builder.webp",
+      "http://127.0.0.1:3100/projects/aurelia/desktop-01.webp",
+      "http://127.0.0.1:3100/projects/haven/commerce.webp",
+      "http://127.0.0.1:3100/_next/static/css/7d5f6a605a2b8564.css",
+      "http://127.0.0.1:3100/bm-visual?_rsc=QH5oHfZUMtDPVqzs",
+      "http://127.0.0.1:3100/_next/static/css/481400952489106b.css",
+      "http://127.0.0.1:3100/bm-tech?_rsc=3gQHWDKmM_2-AfpG",
+      "http://127.0.0.1:3100/_next/static/css/50fac9a2b5aecfee.css",
+      "http://127.0.0.1:3100/creator?_rsc=2mssLbDoU33vy2b6",
+      "http://127.0.0.1:3100/_next/static/chunks/437-dad72d7526ba8d47.js",
+      "http://127.0.0.1:3100/_next/static/chunks/app/bm-visual/page-d3f2f4c6f6834f71.js",
+      "http://127.0.0.1:3100/_next/static/chunks/app/bm-tech/page-411da545eb71b134.js",
+      "http://127.0.0.1:3100/_next/static/chunks/app/creator/page-22bc7e43686d956b.js"
+    ]
+  },
+  "keyboard": "Skip link focuses main; visible focus outline",
+  "reducedMotion": "No homepage transition; all 3 Gateway destinations, back and reload passed at 390px",
+  "noJavaScript": "Headline, work and contact links rendered"
+}

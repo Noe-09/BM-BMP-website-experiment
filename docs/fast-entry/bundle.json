@@ -1,0 +1,30 @@
+{
+  "homeChunks": [
+    "static/chunks/4bd1b696-92152b0f5947070d.js",
+    "static/chunks/794-735cf927e48def02.js",
+    "static/chunks/main-app-5581341034c4bcdd.js",
+    "static/chunks/app/layout-59412aa2071d01d0.js",
+    "static/chunks/437-dad72d7526ba8d47.js",
+    "static/chunks/app/page-d8adc066f80dc026.js",
+    "static/chunks/polyfills-42372ed130431b0a.js",
+    "static/chunks/webpack-828ec0fef0157192.js"
+  ],
+  "artOnlyChunks": [
+    "static/chunks/bd904a5c-bd45e9b9ae2e94d0.js",
+    "static/chunks/b536a0f1-f7dace469d34b160.js",
+    "static/chunks/500-b13bb91f5a6311b6.js",
+    "static/chunks/750-1d9492933e3996a6.js",
+    "static/chunks/945-6d9d49d0c0b48834.js",
+    "static/chunks/app/art/page-4e795cb1ba7b6596.js"
+  ],
+  "heavyChunks": [
+    "static/chunks/750-1d9492933e3996a6.js",
+    "static/chunks/app/art/page-4e795cb1ba7b6596.js",
+    "static/chunks/b536a0f1-f7dace469d34b160.js",
+    "static/chunks/bd904a5c-bd45e9b9ae2e94d0.js"
+  ],
+  "homeJavaScriptBytes": 579291,
+  "homeJavaScriptGzipBytes": 178699,
+  "modernHomeJavaScriptBytes": 466697,
+  "modernHomeJavaScriptGzipBytes": 139072
+}
