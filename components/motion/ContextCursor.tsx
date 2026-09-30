@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 import { damp, MOTION } from "@/lib/motion/physics";
@@ -34,6 +35,8 @@ function readCursorState(target: EventTarget | null): CursorState {
 }
 
 export function ContextCursor() {
+  const pathname = usePathname();
+  const isFastEntry = pathname === "/";
   const profile = useInteractionProfile();
   const cursorRef = useRef<HTMLDivElement>(null);
   const frameRef = useRef<number | null>(null);
@@ -46,7 +49,7 @@ export function ContextCursor() {
   });
 
   useEffect(() => {
-    if (!profile.ready || profile.pointer !== "fine" || profile.reducedMotion) return;
+    if (isFastEntry || !profile.ready || profile.pointer !== "fine" || profile.reducedMotion) return;
 
     document.documentElement.dataset.customCursor = "active";
 
@@ -91,9 +94,9 @@ export function ContextCursor() {
       frameRef.current = null;
       delete document.documentElement.dataset.customCursor;
     };
-  }, [profile.pointer, profile.ready, profile.reducedMotion]);
+  }, [isFastEntry, profile.pointer, profile.ready, profile.reducedMotion]);
 
-  if (!profile.ready || profile.pointer !== "fine" || profile.reducedMotion) return null;
+  if (isFastEntry || !profile.ready || profile.pointer !== "fine" || profile.reducedMotion) return null;
 
   return (
     <div
