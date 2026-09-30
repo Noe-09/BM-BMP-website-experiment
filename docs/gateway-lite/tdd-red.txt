@@ -68,7 +68,7 @@ test at tests/gateway-lite.test.mjs:24:1
 test at tests/gateway-lite.test.mjs:35:1
 ✖ root keeps semantic navigation separate from presentation, without mandatory Continue (3.719458ms)
   AssertionError [ERR_ASSERTION]: The input did not match the regular expression /GatewayLite/. Input:
-  
+
   'import type { Metadata } from "next";\n' +
     '\n' +
     'import { GatewayPrototype } from "@/components/gateway/GatewayPrototype";\n' +
@@ -85,7 +85,7 @@ test at tests/gateway-lite.test.mjs:35:1
     'export default function Home() {\n' +
     '  return <GatewayPrototype />;\n' +
     '}\n'
-  
+
       at TestContext.<anonymous> (file:///Users/noe/Documents/GitHub/BM-BMP-website-experiment/tests/gateway-lite.test.mjs:37:10)
       at async Test.run (node:internal/test_runner/test:1409:7)
       at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
