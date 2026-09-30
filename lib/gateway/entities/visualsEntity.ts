@@ -43,10 +43,10 @@ export class VisualsEntity {
   private previewMaterials: ShaderMaterial[] = [];
   private hoverCurrent = 0;
 
-  constructor() {
+  constructor(onInvalidate?: () => void) {
     this.group = new Group();
     this.group.name = "VisualsEntity";
-    this.init();
+    this.init(onInvalidate);
   }
 
   private ownGeometry<T extends BufferGeometry>(geometry: T): T {
@@ -59,7 +59,7 @@ export class VisualsEntity {
     return material;
   }
 
-  private init() {
+  private init(onInvalidate?: () => void) {
     // 1. DUAL-SHELL OPENING WORLDFORM GEOMETRY
     const topGeo = this.ownGeometry(
       new SphereGeometry(2.2, 40, 20, 0, Math.PI * 2, 0, Math.PI * 0.5),
@@ -134,14 +134,14 @@ export class VisualsEntity {
     this.group.add(this.innerAtmosphereMesh);
 
     // 3. INNER PREVIEW FRAGMENTS (Real BM Visuals Project Crops)
-    this.initPreviewFragments();
+    this.initPreviewFragments(onInvalidate);
     this.group.add(this.previewPlanesGroup);
 
     // Coordinate in final selection scene (Left coordinate, in front of camera at Z = -18)
     this.group.position.set(-3.6, 0.6, -26.0);
   }
 
-  private initPreviewFragments() {
+  private initPreviewFragments(onInvalidate?: () => void) {
     const loader = new TextureLoader();
 
     const projectData = [
@@ -177,6 +177,7 @@ export class VisualsEntity {
         item.path,
         (tex) => {
           tex.colorSpace = SRGBColorSpace;
+          onInvalidate?.();
         },
         undefined,
         () => {},

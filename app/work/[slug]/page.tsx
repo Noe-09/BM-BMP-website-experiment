@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -22,15 +23,7 @@ export async function generateMetadata({
   const caseStudy = getProjectCase(slug);
   if (!caseStudy) notFound();
 
-  return {
-    title: caseStudy.project.title,
-    description: caseStudy.seoDescription,
-    openGraph: {
-      title: `${caseStudy.project.title} — BMP`,
-      description: caseStudy.seoDescription,
-      type: "website",
-    },
-  };
+  return pageMetadata(`/work/${slug}`, caseStudy.project.title, caseStudy.seoDescription, false, caseStudy.project.previewAssets[0]?.src);
 }
 
 export default async function ProjectCaseRoute({ params }: ProjectCaseRouteProps) {

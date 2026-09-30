@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 
 import { PageHero } from "@/components/site/PageHero";
@@ -6,10 +7,7 @@ import { SiteHeader } from "@/components/site/SiteHeader";
 import { Container } from "@/components/ui/Container";
 import { ABOUT } from "@/content/about";
 
-export const metadata: Metadata = {
-  title: "About Us",
-  description: ABOUT.intro.value,
-};
+export const metadata: Metadata = pageMetadata("/about", "About Us", ABOUT.intro.value);
 
 export default function AboutPage() {
   return (

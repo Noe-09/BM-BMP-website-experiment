@@ -50,7 +50,7 @@ export function deriveDestinationComposition(
 
 export class DestinationEntitySystem {
   readonly group = new Group();
-  readonly visuals = new VisualsEntity();
+  readonly visuals: VisualsEntity;
   readonly technical = new TechnicalEntity();
   readonly creator = new CreatorEntity();
 
@@ -60,7 +60,8 @@ export class DestinationEntitySystem {
   private readonly pointerTarget = new Vector2();
   private readonly pointerCurrent = new Vector2();
 
-  constructor() {
+  constructor(onInvalidate?: () => void) {
+    this.visuals = new VisualsEntity(onInvalidate);
     this.group.name = "DestinationEntitySystem";
     this.group.add(
       this.visuals.group,

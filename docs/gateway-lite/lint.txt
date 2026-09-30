@@ -1,0 +1,10 @@
+
+> bm-visuals@0.1.0 lint
+> eslint
+
+
+/Users/noe/Documents/GitHub/BM-BMP-website-experiment/scripts/qa/gateway-lite-browser.mjs
+  95:55  warning  'network' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 1 problem (0 errors, 1 warning)
+

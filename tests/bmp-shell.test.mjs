@@ -133,18 +133,19 @@ test("canonical public routes render through one BMP shell", async () => {
   }
 });
 
-test("the production root serves the Gateway with indexable BMP metadata", async () => {
+test("the experiment root serves Gateway Lite with descriptive metadata", async () => {
   const response = await fetch(baseUrl);
   const html = await response.text();
 
   assert.equal(response.status, 200);
-  assert.match(html, /class="gateway-page gateway-prototype"/);
+  assert.match(html, /class="gateway-lite"/);
   assert.match(html, /<title>BMP — Creative × Technology × Products<\/title>/);
   assert.match(
     html,
     /<meta name="description" content="BMP is a creative-tech studio turning business problems and ideas into brands, digital systems, and products\."/,
   );
-  assert.doesNotMatch(html, /noindex|nofollow/);
+  assert.match(html, /noindex/);
+  assert.doesNotMatch(html, /nofollow/);
   assert.doesNotMatch(html, /<title>BM Gateway — Three Worlds/);
 });
 
@@ -162,7 +163,8 @@ test("Studio preserves the former Home composition with distinct metadata", asyn
     html,
     /<meta name="description" content="BMP is a creative-tech studio turning business problems and ideas into brands, digital systems, and products\."/,
   );
-  assert.doesNotMatch(html, /noindex|nofollow/);
+  assert.match(html, /noindex/);
+  assert.doesNotMatch(html, /nofollow/);
 });
 
 test("the deprecated prototype redirects to the canonical root", async () => {

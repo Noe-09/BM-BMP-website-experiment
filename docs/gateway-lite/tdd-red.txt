@@ -1,0 +1,115 @@
+✖ lite timeline has only signature, tunnel and selector, with a shorter mobile passage (0.855417ms)
+✖ returning, reduced motion and Skip select immediately without asset readiness gates (0.146125ms)
+✖ render scheduler sleeps when idle, hidden or offscreen and wakes only for actual work (0.525791ms)
+✖ root keeps semantic navigation separate from presentation, without mandatory Continue (3.719458ms)
+✖ canonical origin fails closed and sitemap uses only an explicitly configured public origin (0.411708ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 0
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 43.081167
+
+✖ failing tests:
+
+test at tests/gateway-lite.test.mjs:7:1
+✖ lite timeline has only signature, tunnel and selector, with a shorter mobile passage (0.855417ms)
+  Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/Users/noe/Documents/GitHub/BM-BMP-website-experiment/lib/gateway/lite.ts' imported from /Users/noe/Documents/GitHub/BM-BMP-website-experiment/tests/gateway-lite.test.mjs
+      at finalizeResolution (node:internal/modules/esm/resolve:272:11)
+      at moduleResolve (node:internal/modules/esm/resolve:879:10)
+      at defaultResolve (node:internal/modules/esm/resolve:1006:11)
+      at #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)
+      at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)
+      at ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)
+      at #resolve (node:internal/modules/esm/loader:687:17)
+      at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)
+      at node:internal/modules/esm/loader:636:32
+      at TracingChannel.tracePromise (node:diagnostics_channel:362:14) {
+    code: 'ERR_MODULE_NOT_FOUND',
+    url: 'file:///Users/noe/Documents/GitHub/BM-BMP-website-experiment/lib/gateway/lite.ts'
+  }
+
+test at tests/gateway-lite.test.mjs:17:1
+✖ returning, reduced motion and Skip select immediately without asset readiness gates (0.146125ms)
+  Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/Users/noe/Documents/GitHub/BM-BMP-website-experiment/lib/gateway/lite.ts' imported from /Users/noe/Documents/GitHub/BM-BMP-website-experiment/tests/gateway-lite.test.mjs
+      at finalizeResolution (node:internal/modules/esm/resolve:272:11)
+      at moduleResolve (node:internal/modules/esm/resolve:879:10)
+      at defaultResolve (node:internal/modules/esm/resolve:1006:11)
+      at #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)
+      at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)
+      at ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)
+      at #resolve (node:internal/modules/esm/loader:687:17)
+      at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)
+      at node:internal/modules/esm/loader:636:32
+      at TracingChannel.tracePromise (node:diagnostics_channel:362:14) {
+    code: 'ERR_MODULE_NOT_FOUND',
+    url: 'file:///Users/noe/Documents/GitHub/BM-BMP-website-experiment/lib/gateway/lite.ts'
+  }
+
+test at tests/gateway-lite.test.mjs:24:1
+✖ render scheduler sleeps when idle, hidden or offscreen and wakes only for actual work (0.525791ms)
+  Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/Users/noe/Documents/GitHub/BM-BMP-website-experiment/lib/gateway/lite.ts' imported from /Users/noe/Documents/GitHub/BM-BMP-website-experiment/tests/gateway-lite.test.mjs
+      at finalizeResolution (node:internal/modules/esm/resolve:272:11)
+      at moduleResolve (node:internal/modules/esm/resolve:879:10)
+      at defaultResolve (node:internal/modules/esm/resolve:1006:11)
+      at #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)
+      at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)
+      at ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)
+      at #resolve (node:internal/modules/esm/loader:687:17)
+      at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)
+      at node:internal/modules/esm/loader:636:32
+      at TracingChannel.tracePromise (node:diagnostics_channel:362:14) {
+    code: 'ERR_MODULE_NOT_FOUND',
+    url: 'file:///Users/noe/Documents/GitHub/BM-BMP-website-experiment/lib/gateway/lite.ts'
+  }
+
+test at tests/gateway-lite.test.mjs:35:1
+✖ root keeps semantic navigation separate from presentation, without mandatory Continue (3.719458ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /GatewayLite/. Input:
+  
+  'import type { Metadata } from "next";\n' +
+    '\n' +
+    'import { GatewayPrototype } from "@/components/gateway/GatewayPrototype";\n' +
+    'import { BRAND } from "@/content/brand";\n' +
+    'import "./gateway.css";\n' +
+    '\n' +
+    'export const metadata: Metadata = {\n' +
+    '  title: {\n' +
+    '    absolute: "BMP — Creative × Technology × Products",\n' +
+    '  },\n' +
+    '  description: BRAND.positioning.value,\n' +
+    '};\n' +
+    '\n' +
+    'export default function Home() {\n' +
+    '  return <GatewayPrototype />;\n' +
+    '}\n'
+  
+      at TestContext.<anonymous> (file:///Users/noe/Documents/GitHub/BM-BMP-website-experiment/tests/gateway-lite.test.mjs:37:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'import type { Metadata } from "next";\n\nimport { GatewayPrototype } from "@/components/gateway/GatewayPrototype";\nimport { BRAND } from "@/content/brand";\nimport "./gateway.css";\n\nexport const metadata: Metadata = {\n  title: {\n    absolute: "BMP — Creative × Technology × Products",\n  },\n  description: BRAND.positioning.value,\n};\n\nexport default function Home() {\n  return <GatewayPrototype />;\n}\n',
+    expected: /GatewayLite/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at tests/gateway-lite.test.mjs:44:1
+✖ canonical origin fails closed and sitemap uses only an explicitly configured public origin (0.411708ms)
+  Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/Users/noe/Documents/GitHub/BM-BMP-website-experiment/lib/seo.ts' imported from /Users/noe/Documents/GitHub/BM-BMP-website-experiment/tests/gateway-lite.test.mjs
+      at finalizeResolution (node:internal/modules/esm/resolve:272:11)
+      at moduleResolve (node:internal/modules/esm/resolve:879:10)
+      at defaultResolve (node:internal/modules/esm/resolve:1006:11)
+      at #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)
+      at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)
+      at ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)
+      at #resolve (node:internal/modules/esm/loader:687:17)
+      at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)
+      at node:internal/modules/esm/loader:636:32
+      at TracingChannel.tracePromise (node:diagnostics_channel:362:14) {
+    code: 'ERR_MODULE_NOT_FOUND',
+    url: 'file:///Users/noe/Documents/GitHub/BM-BMP-website-experiment/lib/seo.ts'
+  }

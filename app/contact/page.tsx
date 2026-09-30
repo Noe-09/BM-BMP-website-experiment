@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 
 import { ContactForm } from "@/components/contact/ContactForm";
@@ -7,10 +8,7 @@ import { SiteHeader } from "@/components/site/SiteHeader";
 import { Container } from "@/components/ui/Container";
 import { CONTACT } from "@/content/contact";
 
-export const metadata: Metadata = {
-  title: "Start a Project",
-  description: CONTACT.body.value,
-};
+export const metadata: Metadata = pageMetadata("/contact", "Start a Project", CONTACT.body.value);
 
 export default function ContactPage() {
   return (

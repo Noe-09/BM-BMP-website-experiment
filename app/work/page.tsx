@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 
 import { SiteFooter } from "@/components/site/SiteFooter";
@@ -6,10 +7,7 @@ import { PageHero } from "@/components/site/PageHero";
 import { WorkProjectIndex } from "@/components/work/WorkProjectIndex";
 import { WORK } from "@/content/work";
 
-export const metadata: Metadata = {
-  title: "Work",
-  description: WORK.intro.value,
-};
+export const metadata: Metadata = pageMetadata("/work", "Work", WORK.intro.value);
 
 export default function WorkPage() {
   return (

@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -21,15 +22,7 @@ export async function generateMetadata({
   const world = getPublishedCreatorWorld(slug, CREATOR.worlds);
   if (!world) notFound();
 
-  return {
-    title: `${world.name} — BMP Creator`,
-    description: world.developmentNote,
-    openGraph: {
-      title: `${world.name} — BMP Creator`,
-      description: world.developmentNote,
-      type: "website",
-    },
-  };
+  return pageMetadata(`/creator/${slug}`, `${world.name} — BMP Creator`, world.developmentNote, true);
 }
 
 export default async function CreatorDetailPage({

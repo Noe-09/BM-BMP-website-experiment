@@ -18,7 +18,7 @@ export type GatewaySceneController = {
   dispose(): void;
 };
 
-export function createGatewayScene(canvas: HTMLCanvasElement): GatewaySceneController {
+export function createGatewayScene(canvas: HTMLCanvasElement, onInvalidate?: () => void): GatewaySceneController {
   let renderer: WebGLRenderer | undefined;
   let environment: SpectralEnvironment | undefined;
   let entities: DestinationEntitySystem | undefined;
@@ -46,7 +46,7 @@ export function createGatewayScene(canvas: HTMLCanvasElement): GatewaySceneContr
     const world = new SpectralEnvironment();
     environment = world;
     scene.add(world.group);
-    const heroes = new DestinationEntitySystem();
+    const heroes = new DestinationEntitySystem(onInvalidate);
     entities = heroes;
     scene.add(heroes.group);
     const ambient = new HemisphereLight(0xf6f5fc, 0x8ba9af, 1.05);

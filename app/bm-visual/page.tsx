@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 
 import { CapabilitiesIndex } from "@/components/home/CapabilitiesIndex";
@@ -11,10 +12,7 @@ import { SERVICES } from "@/content/services";
 import "../ending.css";
 import "../home.css";
 
-export const metadata: Metadata = {
-  title: "BM Visual",
-  description: SERVICES.visual.supportingCopy.value,
-};
+export const metadata: Metadata = pageMetadata("/bm-visual", "BM Visual", SERVICES.visual.supportingCopy.value);
 
 export default function BMVisualPage() {
   const action = {

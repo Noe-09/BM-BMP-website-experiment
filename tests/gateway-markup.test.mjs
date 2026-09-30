@@ -81,8 +81,8 @@ test("the production root owns the Gateway and Studio owns the former Home", asy
   const studio = await read("../app/studio/page.tsx");
   const deprecated = await read("../app/gateway-prototype/page.tsx");
 
-  assert.match(gateway, /gateway\.css/);
-  assert.match(gateway, /GatewayPrototype/);
+  assert.match(gateway, /gateway-lite\.css/);
+  assert.match(gateway, /GatewayLite/);
   assert.match(studio, /BmpHero/);
   assert.doesNotMatch(studio, /GatewayPrototype|gateway-prototype/i);
   assert.match(deprecated, /redirect\("\/"\)/);
@@ -140,7 +140,7 @@ test("orchestrator owns session resolution, loader modes, fallback timing, and s
 test("gateway route renders the shared client orchestrator from a server component", async () => {
   const source = await read("../app/page.tsx");
 
-  assert.match(source, /GatewayPrototype/);
+  assert.match(source, /GatewayLite/);
   assert.match(source, /BRAND\.positioning\.value/);
   assert.doesNotMatch(source, /noindex|nofollow/);
   assert.doesNotMatch(source, /[\"']use client[\"']/);

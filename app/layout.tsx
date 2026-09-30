@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { allowIndexing } from "@/lib/seo";
 import { ContextCursor } from "@/components/motion/ContextCursor";
 import { SceneThemeController } from "@/components/motion/SceneThemeController";
 import "./globals.css";
@@ -7,6 +8,7 @@ import "./site.css";
 import "./bmp.css";
 
 export const metadata: Metadata = {
+  robots: { index: allowIndexing, follow: true },
   title: {
     default: "BMP — Creative × Technology × Products",
     template: "%s — BMP",

@@ -1,0 +1,80 @@
+.gateway-lite { --gl-bg: #101b28; --gl-ink: #e8eef1; --gl-muted: #b1bdc6; --gl-line: #3c4a58; background: var(--gl-bg); color: var(--gl-ink); font-family: var(--font-body); }
+.gateway-lite a { color: inherit; text-decoration: none; }
+.gateway-lite a:focus-visible, .gl-worlds:focus-visible { outline: 2px solid #fff; outline-offset: 5px; }
+.gateway-lite a { transition: background-color 180ms ease, color 180ms ease; }
+.gl-hero { position: relative; isolation: isolate; min-height: 760px; min-height: max(760px, 100svh); display: grid; grid-template-rows: auto auto minmax(190px, 1fr) auto; padding: 0 20px 20px; }
+.gl-presentation { position: absolute; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+.gl-canvas { display: block; width: 100%; height: 100%; opacity: 0; transition: opacity 200ms ease; }
+.gl-canvas[data-ready="true"] { opacity: 1; }
+.gl-presentation[data-stage="signature"] .gl-canvas { opacity: 0; }
+.gl-signature { position: absolute; inset: 0; display: none; align-items: center; justify-content: center; flex-direction: column; gap: 16px; }
+.gl-presentation[data-stage="signature"] .gl-signature { display: flex; }
+.gl-signature > span:first-child { font-size: clamp(74px, 13vw, 180px); font-weight: 500; letter-spacing: -.09em; line-height: 1; }
+.gl-signature > span:last-child { font: 9px var(--font-mono); letter-spacing: .08em; }
+.gl-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 72px; border-bottom: 1px solid var(--gl-line); background: rgb(16 27 40 / 96%); }
+.gl-mark { font-size: 23px; font-weight: 600; letter-spacing: -.055em; }
+.gl-header nav { display: flex; align-items: center; gap: 16px; }
+.gl-header nav a { display: flex; align-items: center; min-height: 44px; font: 10px var(--font-mono); }
+.gl-header nav a:hover, .gl-section-title a:hover { color: #fff; text-decoration: underline; text-underline-offset: 5px; }
+.gl-intro { max-width: 610px; padding: 22px 16px 18px 0; background: rgb(16 27 40 / 94%); }
+.gl-intro h1 { font-size: clamp(18px, 2vw, 28px); line-height: 1.3; font-weight: 450; letter-spacing: -.035em; max-width: 520px; }
+.gl-intro p { font-size: 12px; line-height: 1.55; color: var(--gl-muted); margin-top: 10px; max-width: 480px; }
+.gl-worlds { background: rgb(16 27 40 / 96%); scroll-margin-top: 20px; }
+.gl-eyebrow { font: 10px var(--font-mono); letter-spacing: .1em; line-height: 1.5; }
+.gl-worlds > p { padding: 13px 0; border-bottom: 1px solid var(--gl-line); color: var(--gl-muted); }
+.gl-world-grid { display: grid; }
+.gl-world-grid a { display: grid; grid-template-columns: 18px 1fr 24px; align-items: center; gap: 12px; min-height: 74px; padding: 12px 4px; border-bottom: 1px solid var(--gl-line); }
+.gl-world-grid a:hover, .gl-world-grid a:focus-visible { background: #233344; }
+.gl-world-index { font: 9px var(--font-mono); color: var(--gl-muted); }
+.gl-world-grid strong { display: block; font-size: 15px; font-weight: 500; letter-spacing: .025em; }
+.gl-world-description { display: block; font-size: 11px; line-height: 1.45; color: var(--gl-muted); margin-top: 5px; }
+.gl-arrow { font-size: 22px; }
+.gl-content { padding: 0 clamp(20px, 5vw, 80px); background: #10171f; }
+.gl-content section { padding: 42px 0; border-bottom: 1px solid var(--gl-line); }
+.gl-section-title { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; margin-bottom: 24px; }
+.gl-content h2 { font-size: clamp(24px, 3vw, 38px); line-height: 1.2; font-weight: 450; letter-spacing: -.04em; }
+.gl-section-title > a { padding: 12px 0; font: 10px var(--font-mono); }
+.gl-project-grid { display: grid; gap: 30px; }
+.gl-project { display: block; }
+.gl-project img { width: 100%; height: auto; aspect-ratio: 1.6; object-fit: cover; }
+.gl-project-title { display: flex; align-items: center; gap: 14px; margin: 16px 0 10px; }
+.gl-project-title h3 { flex: 1; font-size: 19px; font-weight: 500; }
+.gl-project-title > span { font: 11px var(--font-mono); color: var(--gl-muted); }
+.gl-project p { font-size: 13px; line-height: 1.65; color: var(--gl-muted); max-width: 550px; }
+.gl-what > p { max-width: 690px; font-size: clamp(20px, 2.5vw, 32px); line-height: 1.35; margin: 24px 0; color: var(--gl-muted); }
+.gl-capabilities { display: grid; gap: 18px; font-size: 15px; line-height: 1.5; }
+.gl-capabilities p { border-top: 1px solid var(--gl-line); padding-top: 18px; }
+.gl-directory > a { display: grid; grid-template-columns: 1fr 20px; align-items: center; gap: 8px; padding: 22px 0; border-top: 1px solid var(--gl-line); }
+.gl-directory > a h3 { font-size: 20px; font-weight: 450; }
+.gl-directory > a p { grid-row: 2; font-size: 13px; color: var(--gl-muted); }
+.gl-directory > a > span { grid-column: 2; grid-row: 1 / 3; }
+.gl-directory > a:hover { color: #fff; }
+.gl-contact h2 { font-size: clamp(40px, 6vw, 80px); line-height: 1.03; margin: 24px 0; }
+.gl-contact-link { display: inline-flex; align-items: center; min-height: 48px; border-bottom: 1px solid var(--gl-muted); font: 12px var(--font-mono); }
+.gl-footer { display: flex; align-items: center; flex-wrap: wrap; gap: 24px; justify-content: space-between; padding: 28px 0; }
+.gl-footer p, .gl-footer > a { font: 10px var(--font-mono); }
+.gl-footer > a { padding: 12px 0; }
+@media (min-width: 640px) {
+  .gl-hero { padding: 0 clamp(24px, 3vw, 48px) 28px; min-height: max(680px, 100svh); }
+  .gl-header { min-height: 80px; }
+  .gl-header nav { gap: 32px; }
+  .gl-header nav a { font-size: 11px; }
+  .gl-intro { padding-top: 26px; }
+  .gl-intro p { font-size: 13px; }
+  .gl-world-grid { grid-template-columns: repeat(3, 1fr); }
+  .gl-world-grid a { min-height: 104px; padding: 16px; border-right: 1px solid var(--gl-line); }
+  .gl-world-grid a:first-child { padding-left: 0; }
+  .gl-world-grid a:last-child { border-right: 0; }
+  .gl-world-grid strong { font-size: clamp(15px, 1.45vw, 21px); }
+  .gl-world-description { font-size: 12px; }
+  .gl-project-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+  .gl-content section { padding: 56px 0; }
+  .gl-capabilities { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .gl-directory > a { grid-template-columns: 1fr 1fr 20px; }
+  .gl-directory > a p { grid-row: 1; }
+  .gl-directory > a > span { grid-column: 3; grid-row: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gateway-lite a, .gl-canvas { transition: none !important; }
+  .gl-signature { display: none !important; }
+}

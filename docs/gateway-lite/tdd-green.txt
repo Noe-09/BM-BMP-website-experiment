@@ -1,0 +1,13 @@
+✔ lite timeline has only signature, tunnel and selector, with a shorter mobile passage (23.875875ms)
+✔ returning, reduced motion and Skip select immediately without asset readiness gates (0.319792ms)
+✔ render scheduler sleeps when idle, hidden or offscreen and wakes only for actual work (0.078875ms)
+✔ root keeps semantic navigation separate from presentation, without mandatory Continue (2.114041ms)
+✔ canonical origin fails closed and sitemap uses only an explicitly configured public origin (4.323834ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 60.092084
