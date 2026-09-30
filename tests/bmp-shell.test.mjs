@@ -225,3 +225,24 @@ test("the responsive Studio shell uses an intentional compact menu without hidin
   assert.match(mobileRules, /\.compact-nav\s*\{[\s\S]*?display:\s*block/);
   assert.doesNotMatch(css, /\.bmp-header__nav a:nth-child/);
 });
+
+
+test("Gateway Lite permanently renders one descriptive heading and direct destination anchors", async () => {
+  const html = await (await fetch(baseUrl)).text();
+  assert.equal(html.match(/<h1\b/g)?.length, 1);
+  assert.match(html, /<h1[^>]*>BMP/);
+  for (const route of ["/bm-visual", "/creator", "/bm-tech", "/work", "/contact"]) assert.ok(html.includes(`href="${route}"`));
+  for (const label of ["BMP VISUAL", "BMP CREATOR", "BMP TECH", "Selected Work", "What BMP Does"]) assert.ok(html.includes(label));
+  assert.doesNotMatch(html, /CONTINUE →|gateway-briefing|role="progressbar"/);
+  assert.match(html, /BMP is a creative-tech studio/);
+});
+
+test("SEO endpoints respond and the experiment has an explicit crawlable noindex policy", async () => {
+  const robots = await fetch(`${baseUrl}/robots.txt`);
+  assert.equal(robots.status, 200);
+  assert.match(await robots.text(), /User-Agent: \*/i);
+  const sitemap = await fetch(`${baseUrl}/sitemap.xml`);
+  assert.equal(sitemap.status, 200);
+  assert.match(sitemap.headers.get("content-type"), /xml/);
+  assert.match(await sitemap.text(), /urlset/);
+});
