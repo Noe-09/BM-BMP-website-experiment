@@ -1,8 +1,8 @@
 # BMP fast entry experiment
 
-Repository: `Noe-09/BM-BMP-website-experiment`  
-Branch: `experiment/fast-entry-v1`  
-Baseline: `fd66811f7fb96c0a733ec8b1915d305af6db50ae`  
+Repository: `Noe-09/BM-BMP-website-experiment`
+Branch: `experiment/fast-entry-v1`
+Baseline: `fd66811f7fb96c0a733ec8b1915d305af6db50ae`
 Implementation history: `git log --oneline fd66811..experiment/fast-entry-v1`
 
 ## Result
